@@ -6,8 +6,10 @@ namespace NumericalAnalysis.RootOfEquation
 {
     public interface IRootFinder
     {
-        double GetRoot();
-        void FindPointOfA_B();
+        Equation Equation { get; set; }
+        double Accuracy { get; set; }
+        void GetRoot();
+        void FindPoint();
 
     }
 }

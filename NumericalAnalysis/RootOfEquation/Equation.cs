@@ -6,17 +6,11 @@ namespace NumericalAnalysis.RootOfEquation
 {
     public class Equation
     {
-        /// <summary>
-        /// Dicttionary<coefficent,pow>
-        /// </summary>
         public (int Coefficient, int Pow) Variable1 { get; set; }
-        /// <summary>
-        /// Dicttionary<coefficent,pow>
-        /// </summary>
         public (int Coefficient, int Pow) Variable2 { get; set; }
         public int ConstVal { get; set; }
 
-        public double GetEquationVal(double valueOfVariable)
+        public double F(double valueOfVariable)
         {
             double result = (
                 Variable1.Coefficient * Math.Pow(valueOfVariable, Variable1.Pow) +
