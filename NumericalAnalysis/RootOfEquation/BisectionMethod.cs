@@ -7,8 +7,8 @@ namespace NumericalAnalysis.RootOfEquation
 {
     class BisectionMethod : IRootFinder
     {
-        private double pointA = 0;
-        private double pointB = 1;
+        private double pointA = 5;
+        private double pointB = 6;
         public Equation Equation { get; set; }
         public double Accuracy { get; set; }
 
@@ -19,11 +19,19 @@ namespace NumericalAnalysis.RootOfEquation
             double c = (pointA + pointB) / 2;
             double fOfC = Equation.F(c);
             string update = "";
-            WriteLine("{0,-5} | {1,10} | {2,10} | {3,10} | {4,10} | {5,10} | {6,10} | {7,10}", "Step", "a", "f{b)", "b", "f(b)", "c", "f(c)", "Update");
+            WriteLine("{0,-5} | {1,10} | {2,10} | {3,10} | {4,10} | {5,10} | {6,10} | {7,10}", "Step", "a", "f{a)", "b", "f(b)", "c", "f(c)", "Update");
 
-
-            while (c != 0 && Math.Abs(fOfC) >= Accuracy)
+            do
             {
+                WriteLine("---------------------------------------------------------------------------------------------------");
+                WriteLine("{0,-5} | {1,10} | {2,10} | {3,10} | {4,10} | {5,10} | {6,10} | {7,10}",
+                     step++, pointA.ToString("0.00000"),
+                     Equation.F(pointA).ToString("0.00000"),
+                     pointB.ToString("0.00000"),
+                     Equation.F(pointB).ToString("0.00000"),
+                     c.ToString("0.00000"),
+                     fOfC.ToString("0.000000"),
+                     update);
                 if (fOfC == 0)
                 {
                     break;
@@ -38,18 +46,10 @@ namespace NumericalAnalysis.RootOfEquation
                     pointA = c;
                     update = "a=c";
                 }
-                WriteLine("---------------------------------------------------------------------------------------------------");
-                WriteLine("{0,-5} | {1,10} | {2,10} | {3,10} | {4,10} | {5,10} | {6,10} | {7,10}",
-                     step++, pointA.ToString("0.00000"),
-                     Equation.F(pointA).ToString("0.00000"),
-                     pointB.ToString("0.00000"),
-                     Equation.F(pointB).ToString("0.00000"),
-                     c.ToString("0.00000"),
-                     fOfC.ToString("0.00000"),
-                     update);
                 c = (pointA + pointB) / 2;
                 fOfC = Equation.F(c);
             }
+            while (c != 0 && Math.Abs(fOfC) >= Accuracy) ;
             WriteLine();
             WriteLine($"Approximate root of the equation {Equation.Variable1.Coefficient}x{Equation.Variable1.Pow} + " +
                 $"{Equation.Variable2.Coefficient}x{Equation.Variable2.Pow} + {Equation.ConstVal} using Bisection method is " +

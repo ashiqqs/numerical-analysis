@@ -11,7 +11,7 @@ namespace NumericalAnalysis.RootOfEquation
         public int ConstVal { get; set; }
 
         public double F(double valueOfVariable)
-        {
+        { 
             double result = (
                 Variable1.Coefficient * Math.Pow(valueOfVariable, Variable1.Pow) +
                 Variable2.Coefficient * Math.Pow(valueOfVariable, Variable2.Pow) +
