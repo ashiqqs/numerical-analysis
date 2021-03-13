@@ -19,6 +19,7 @@ namespace NumericalAnalysis.RootOfEquation
                 );
             return result;
         }
+        
 
 
     }

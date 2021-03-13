@@ -5,8 +5,8 @@ namespace NumericalAnalysis.RootOfEquation
 {
     public class FalsePositionMethod : IRootFinder
     {
-        private double pointX0 = 5;
-        private double pointX1 = 6;
+        private double pointX0 = -3;
+        private double pointX1 = -2;
         public Equation Equation { get; set; }
         public double Accuracy { get; set; }
 
