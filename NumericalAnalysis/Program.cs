@@ -2,6 +2,7 @@
 using NumericalAnalysis.RootOfEquation;
 using NumericalAnalysis.Interpolation;
 using static System.Console;
+using NumericalAnalysis.Integral;
 
 namespace NumericalAnalysis
 {
@@ -56,14 +57,23 @@ namespace NumericalAnalysis
             //WriteLine("---------------------------------");
             //WriteLine("Result y = " + ndd.Result);
 
-            LagrangesInterpolation li = new LagrangesInterpolation();
-            WriteLine("Lagrange Interpolation Formula: ");
+            //LagrangesInterpolation li = new LagrangesInterpolation();
+            //WriteLine("Lagrange Interpolation Formula: ");
+            //WriteLine("---------------------------------");
+            //li.TakeInput();
+            //li.ApplyFormula();
+            //WriteLine("Calculating...");
+            //WriteLine("---------------------------------");
+            //WriteLine("Result y = " + li.Result);
+
+            TrapezoidalRule tr = new TrapezoidalRule();
+            WriteLine("Trapezoidal Rule: ");
             WriteLine("---------------------------------");
-            li.TakeInput();
-            li.ApplyFormula();
+            tr.TakeInput();
+            tr.ApplyFormula();
             WriteLine("Calculating...");
             WriteLine("---------------------------------");
-            WriteLine("Result y = " + li.Result);
+            WriteLine("Result y = " + tr.Result);
         }
     }
 }
