@@ -3,11 +3,10 @@ using static System.Console;
 
 namespace NumericalAnalysis.Integral
 {
-    //To find the exact value of a definite integral 
-    public class TrapezoidalRule
+    public class SimsonThreeEightRule
     {
-        private double lowerLimit, upperLimit, delX;
-        private int n,i;
+        private double lowerLimit, upperLimit, h;
+        private int n, i; // n:interval should be even
         public double Result { get; private set; }
 
         public void TakeInput()
@@ -16,32 +15,36 @@ namespace NumericalAnalysis.Integral
             lowerLimit = double.Parse(ReadLine());
             Write("Enter the value of Upper Limit: ");
             upperLimit = double.Parse(ReadLine());
+
             Write("How many interval you want to devide: ");
             n = int.Parse(ReadLine());
-
-            delX = (upperLimit - lowerLimit) / n;
+            h = (upperLimit - lowerLimit) / n;
         }
 
         public void ApplyFormula()
         {
+            Result = f(lowerLimit) + f(upperLimit);
             double interval = lowerLimit;
-            Result = f(lowerLimit);
-            for (i=1; i<n; i++)
+            for (i = 1; i < n; i++)
             {
-                interval += delX;
-                Result += 2*f(interval);
+                interval += h;
+                if (i!=3 && i<n)
+                {
+                    Result += (3 * f(interval));
+                }
+                if (i % 3 == 0 && i <= n)
+                {
+                    Result += (2 * f(interval));
+                }
             }
-            Result += f(upperLimit);
-            Result *= delX / 2;
+            Result *= (3 * h / 8);
         }
 
 
         private double f(double x)
         {
-            //Given f(x) = Root(1+x^2)
-            return Math.Sqrt(1 + (x * x));
+            //Given f(x) = 1/x
+            return 1 / x;
         }
-
-
     }
 }

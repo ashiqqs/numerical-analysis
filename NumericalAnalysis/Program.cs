@@ -66,14 +66,32 @@ namespace NumericalAnalysis
             //WriteLine("---------------------------------");
             //WriteLine("Result y = " + li.Result);
 
-            TrapezoidalRule tr = new TrapezoidalRule();
-            WriteLine("Trapezoidal Rule: ");
+            //TrapezoidalRule tr = new TrapezoidalRule();
+            //WriteLine("Trapezoidal Rule: ");
+            //WriteLine("---------------------------------");
+            //tr.TakeInput();
+            //tr.ApplyFormula();
+            //WriteLine("Calculating...");
+            //WriteLine("---------------------------------");
+            //WriteLine($"Solution by trapezoidal rule is = " + tr.Result);
+
+            //SimsonsOneThirdRule sotr = new SimsonsOneThirdRule();
+            //WriteLine("Simson's 1/3 Rule: ");
+            //WriteLine("---------------------------------");
+            //sotr.TakeInput();
+            //sotr.ApplyFormula();
+            //WriteLine("Calculating...");
+            //WriteLine("---------------------------------");
+            //WriteLine($"The approximation of above integral is {sotr.Result} using Simpson's 1/3 rule");
+
+            SimsonThreeEightRule ster = new SimsonThreeEightRule();
+            WriteLine("Simson's 3/8 Rule: ");
             WriteLine("---------------------------------");
-            tr.TakeInput();
-            tr.ApplyFormula();
+            ster.TakeInput();
+            ster.ApplyFormula();
             WriteLine("Calculating...");
             WriteLine("---------------------------------");
-            WriteLine("Result y = " + tr.Result);
+            WriteLine($"Solution by Simpson's 3/8 Rule is {ster.Result}");
         }
     }
 }
