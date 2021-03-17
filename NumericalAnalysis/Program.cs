@@ -12,18 +12,18 @@ namespace NumericalAnalysis
             // BisectionMethod bm = new BisectionMethod();
             // bm.GetRoot();
 
-            Equation eq = new Equation();
-            eq.Variable1 = (2,3);
-            eq.Variable2 = (-5,1);
-            eq.ConstVal = 25;
+            //Equation eq = new Equation();
+            //eq.Variable1 = (2,3);
+            //eq.Variable2 = (-5,1);
+            //eq.ConstVal = 25;
 
-            IRootFinder fpm = new FalsePositionMethod();
-            fpm.Accuracy = 0.00001;
-            fpm.Equation = eq;
+            //IRootFinder fpm = new FalsePositionMethod();
+            //fpm.Accuracy = 0.00001;
+            //fpm.Equation = eq;
 
             //fpm.GetRoot();
 
-            NewtonRaphsonMethod nrm = new NewtonRaphsonMethod();
+            //NewtonRaphsonMethod nrm = new NewtonRaphsonMethod();
             //nrm.GetRoot();
 
             //GregoryNewtonForward gnf = new GregoryNewtonForward();
@@ -46,15 +46,24 @@ namespace NumericalAnalysis
             //WriteLine("---------------------------------");
             //WriteLine("Result y = " + gnb.Result);
 
-            NewtonDevidedDifference ndd = new NewtonDevidedDifference();
-            WriteLine("Newton Devided Difference Formula: ");
+            //NewtonDevidedDifference ndd = new NewtonDevidedDifference();
+            //WriteLine("Newton Devided Difference Formula: ");
+            //WriteLine("---------------------------------");
+            //ndd.TakeInput();
+            //ndd.BuildDiffTable();
+            //ndd.ApplyFormula();
+            //WriteLine("Calculating...");
+            //WriteLine("---------------------------------");
+            //WriteLine("Result y = " + ndd.Result);
+
+            LagrangesInterpolation li = new LagrangesInterpolation();
+            WriteLine("Lagrange Interpolation Formula: ");
             WriteLine("---------------------------------");
-            ndd.TakeInput();
-            ndd.BuildDiffTable();
-            ndd.ApplyFormula();
+            li.TakeInput();
+            li.ApplyFormula();
             WriteLine("Calculating...");
             WriteLine("---------------------------------");
-            WriteLine("Result y = " + ndd.Result);
+            WriteLine("Result y = " + li.Result);
         }
     }
 }

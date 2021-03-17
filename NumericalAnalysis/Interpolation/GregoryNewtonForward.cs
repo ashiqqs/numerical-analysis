@@ -3,7 +3,7 @@ using static System.Console;
 
 namespace NumericalAnalysis.Interpolation
 {
-
+    //To find a missing value from a range or group data
     public class GregoryNewtonForward
     {
         private int[] valueOfX = { };
