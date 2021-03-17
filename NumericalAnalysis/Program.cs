@@ -26,12 +26,35 @@ namespace NumericalAnalysis
             NewtonRaphsonMethod nrm = new NewtonRaphsonMethod();
             //nrm.GetRoot();
 
-            GregoryNewtonForward gnf = new GregoryNewtonForward();
-            gnf.TakeInput();
-            gnf.BuildDiffTable();
-            gnf.ApplyFormula();
+            //GregoryNewtonForward gnf = new GregoryNewtonForward();
+            //WriteLine("Gregory Newton Forward Formula: ");
+            //WriteLine("---------------------------------");
+            //gnf.TakeInput();
+            //gnf.BuildDiffTable();
+            //gnf.ApplyFormula();
+            //WriteLine("Calculating...");
+            //WriteLine("---------------------------------");
+            //WriteLine("Result y = " + gnf.Result);
+
+            //GregoryNewtonBackward gnb = new GregoryNewtonBackward();
+            //WriteLine("Gregory Newton Backward Formula: ");
+            //WriteLine("---------------------------------");
+            //gnb.TakeInput();
+            //gnb.BuildDiffTable();
+            //gnb.ApplyFormula();
+            //WriteLine("Calculating...");
+            //WriteLine("---------------------------------");
+            //WriteLine("Result y = " + gnb.Result);
+
+            NewtonDevidedDifference ndd = new NewtonDevidedDifference();
+            WriteLine("Newton Devided Difference Formula: ");
             WriteLine("---------------------------------");
-            WriteLine("Result y = " + gnf.Result);
+            ndd.TakeInput();
+            ndd.BuildDiffTable();
+            ndd.ApplyFormula();
+            WriteLine("Calculating...");
+            WriteLine("---------------------------------");
+            WriteLine("Result y = " + ndd.Result);
         }
     }
 }
